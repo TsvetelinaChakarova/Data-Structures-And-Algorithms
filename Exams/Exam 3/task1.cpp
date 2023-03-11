@@ -37,25 +37,25 @@ class Solution {
         }
 */
 
-	  int sum = 0;
-    void helpFunction(Node *current) {
-        if (current -> leftNode == NULL && current ->rightNode == NULL) {
-            if (current->data % 2 == 1) {
-                sum += current -> data;
-            }
-        }    
-        if (current -> leftNode != NULL) {
-            helpFunction(current -> leftNode);
-        }
-        if (current -> rightNode != NULL) {
-            helpFunction(current -> rightNode);
-        }
-    }
-    
-	void leaves(Node *root) {
-		helpFunction(root);
-        cout << sum << endl;
-    }
+	int sum = 0;
+	void helpFunction(Node * current) {
+	  if (current -> leftNode == NULL && current -> rightNode == NULL) {
+	    if (current -> data % 2 == 1) {
+	      sum += current -> data;
+	    }
+	  }
+	  if (current -> leftNode != NULL) {
+	    helpFunction(current -> leftNode);
+	  }
+	  if (current -> rightNode != NULL) {
+	    helpFunction(current -> rightNode);
+	  }
+	}
+
+	void leaves(Node * root) {
+	  helpFunction(root);
+	  cout << sum << endl;
+	}
 
 };
 
